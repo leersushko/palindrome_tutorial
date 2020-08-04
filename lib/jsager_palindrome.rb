@@ -12,25 +12,6 @@ class String
 		processed_content == processed_content.reverse
 	end
 
-	# Returns the letters in the string. Old code.
-=begin
-	def letters
-		the_letters = [] # empty array
-		letter_regex = /[a-z]/i
-		self.chars.each do |character| # range is 0 to char count - 1
-			if character.match(letter_regex) # regex
-				the_letters << character # inherit
-			end
-		end
-		the_letters.join
-	end
-
-	# Returns the letters in the string. New code. Replaced with scan.
-	def letters
-		self.chars.select { |c| c.match(/[a-z]/i) }.join
-	end
-=end
-
 	private
 
 	# Returns content for palindrome testing.
