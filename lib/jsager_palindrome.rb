@@ -24,17 +24,17 @@ class String
 		end
 		the_letters.join
 	end
-=end
 
-	# Returns the letters in the string. New code.
+	# Returns the letters in the string. New code. Replaced with scan.
 	def letters
 		self.chars.select { |c| c.match(/[a-z]/i) }.join
 	end
+=end
 
 	private
 
 	# Returns content for palindrome testing.
 	def processed_content
-		self.letters.downcase
+		scan(/[a-z]/i).join.downcase
 	end
 end
