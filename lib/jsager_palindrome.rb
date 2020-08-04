@@ -15,9 +15,10 @@ class String
 	# Returns the letters in the string.
 	def letters
 		the_letters = [] # empty array
-		for i in 0..self.length - 1 do # range is 0 to char count - 1
-			if self[i].match(/[a-zA-Z]/) # regex
-				the_letters << self[i] # inherit
+		letter_regex = /[a-z]/i
+		self.chars.each do |character| # range is 0 to char count - 1
+			if character.match(letter_regex) # regex
+				the_letters << character # inherit
 			end
 		end
 		the_letters.join
