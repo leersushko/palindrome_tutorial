@@ -1,21 +1,28 @@
 require "jsager_palindrome/version"
 
 module JsagerPalindrome
-  class Error < StandardError; end
-  # Your code goes here...
-end
-
-class String
-
-	# Returns true for a palindrome, false otherwise.
+  
+  # Returns true for a palindrome, false otherwise.
 	def palindrome?
-		processed_content == processed_content.reverse
+		if processed_content.empty?
+			false
+		else
+			processed_content == processed_content.reverse
+		end
 	end
 
 	private
 
 	# Returns content for palindrome testing.
 	def processed_content
-		scan(/[a-z]/i).join.downcase
+		to_s.scan(/[a-z0-9]/i).join.downcase
 	end
+end
+
+class String
+	include JsagerPalindrome
+end
+
+class Integer
+	include JsagerPalindrome
 end
