@@ -12,7 +12,8 @@ class String
 		processed_content == processed_content.reverse
 	end
 
-	# Returns the letters in the string.
+	# Returns the letters in the string. Old code.
+=begin
 	def letters
 		the_letters = [] # empty array
 		letter_regex = /[a-z]/i
@@ -22,6 +23,12 @@ class String
 			end
 		end
 		the_letters.join
+	end
+=end
+
+	# Returns the letters in the string. New code.
+	def letters
+		self.chars.select { |c| c.match(/[a-z]/i) }.join
 	end
 
 	private
